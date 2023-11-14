@@ -15,8 +15,8 @@ class UrlShortnerScreen extends ConsumerStatefulWidget {
 }
 
 class _UrlShortnerScreenState extends ConsumerState<UrlShortnerScreen> {
-  @override
   final urlController = TextEditingController();
+  @override
   Widget build(BuildContext context) {
     double scrWidth = MediaQuery.sizeOf(context).width;
     double scrHeight = MediaQuery.sizeOf(context).height;
@@ -29,7 +29,7 @@ class _UrlShortnerScreenState extends ConsumerState<UrlShortnerScreen> {
               .read(urlShortnerControllerProvider.notifier)
               .shortenUrl(urlController.text.trim());
         },
-        child: Container(
+        child: SizedBox(
           width: scrWidth * 0.8,
           height: scrHeight * 0.05,
           child: Center(
@@ -53,8 +53,8 @@ class _UrlShortnerScreenState extends ConsumerState<UrlShortnerScreen> {
                     fontSize: 20, fontWeight: FontWeight.bold),
               ),
             ),
-            Spacer(),
-            Container(
+            const Spacer(),
+            SizedBox(
               width: scrWidth * 0.8,
               height: scrHeight * 0.3,
               child: Column(
@@ -86,8 +86,8 @@ class _UrlShortnerScreenState extends ConsumerState<UrlShortnerScreen> {
                 ],
               ),
             ),
-            Spacer(),
-            SizedBox(),
+            const Spacer(),
+            const SizedBox(),
           ],
         ),
       ),
